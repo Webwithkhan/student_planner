@@ -1,0 +1,12 @@
+# Environment variables
+.venv
+venv
+.env
+.env-*
+.env_*
+
+# Other stuff
+.vscode
+
+# python stuffs
+__pychache__

@@ -9,4 +9,4 @@ venv
 .vscode
 
 # python stuffs
-__pychache__
+__pycache__

@@ -1,0 +1,11 @@
+{% extends "../_base_dashboard.html" %}
+{% block content %}
+  <h2>Profile</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Update Profile</button>
+  </form>
+  <p><a href="{% url 'change_password' %}">Change Password</a></p>
+  <p><a href="{% url 'logout' %}">Logout</a></p>
+{% endblock %}

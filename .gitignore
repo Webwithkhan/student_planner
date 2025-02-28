@@ -10,3 +10,6 @@ venv
 
 # python stuffs
 __pycache__
+
+# sqlite
+development_student_planner.sqlite3

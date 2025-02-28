@@ -23,6 +23,9 @@ INSTALLED_APPS = [
     'tailwind',
     'frontend',
     'django_browser_reload', # development only
+    'accounts',
+    'planner',
+    'home',
 ]
 
 MIDDLEWARE = [
@@ -38,6 +41,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'config.urls'
 TAILWIND_APP_NAME = 'frontend'
+AUTH_USER_MODEL = "accounts.CustomUser"
 
 TEMPLATES = [
     {
@@ -86,5 +90,7 @@ USE_TZ = True
 
 
 STATIC_URL = 'static/'
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

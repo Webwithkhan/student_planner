@@ -1,12 +1,21 @@
 {% extends "../_base_dashboard.html" %} {% block content %}
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
   <div class="flex justify-end items-center py-2 px- 4">
-    <a
+    <button
+      type="button"
+      id="createtaskModalButton"
+      data-modal-target="createtaskModal"
+      data-modal-toggle="createtaskModal"
+      class="block w-fit text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+    >
+      New Task
+    </button>
+    {% comment %} <a
       href="{% url 'task_create' %}"
       class="block w-fit text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
     >
       New Task
-    </a>
+    </a> {% endcomment %}
   </div>
   <table
     class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
@@ -35,9 +44,22 @@
         <td class="px-6 py-4">{{ task.status }}</td>
         <td class="px-6 py-4">({{ task.priority }})</td>
         <td class="px-6 py-4">
+          {% comment %} <button 
+              type="button"
+              data-id="{{ task.id }}"
+              data-title="{{ task.title }}"
+              data-description="{{ task.description }}"
+              data-status="{{ task.status }}"
+              data-priority="{{ task.priority }}"
+              data-modal-target="readTaskModal"
+              data-modal-toggle="readTaskModal" 
+              class="font-medium text-primary-600 dark:text-primary-500 hover:underline"
+          >
+              Preview
+          </button> {% endcomment %}
           <a
             href="{% url 'task_update' task.id %}"
-            class="font-medium text-primary-600 dark:text-primary-500 hover:underline"
+            class="font-medium text-primary-600 ml-auto dark:text-primary-500 hover:underline"
             >Edit</a
           >
           <a
@@ -49,12 +71,14 @@
       </tr>
       {% empty %}
       <tr>
+        <td></td>
         <td class="px-6 py-4 items-center">No tasks found.</td>
-        <td>{{ user.username }} </td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
 </div>
-
+{% include '../components/modals/tasks/create.html' %}
+{% include '../components/modals/tasks/preview.html' %}
+{% include '../components/modals/tasks/delete.html' %}
 {% endblock %}

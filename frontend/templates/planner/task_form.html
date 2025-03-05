@@ -1,10 +1,45 @@
-{% extends "../_base_dashboard.html" %}
-{% block content %}
-  <h2>{% if form.instance.id %}Edit Task{% else %}Create Task{% endif %}</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save Task</button>
-  </form>
-  <p><a href="{% url 'task_list' %}">Back to Tasks</a></p>
+{% extends "../_base_dashboard.html" %} {% block content %}
+<div class="flex justify-center items-start w-full">
+  <div
+    class="relative p-4 w-full max-w-2xl mt-2 bg-white rounded-lg shadow-lg dark:bg-gray-800"
+  >
+    <div class="flex justify-between items-center py-4 border-b pb-4 mb-4">
+      <h2>
+        {% if form.instance.id %}Edit Task{% else %}Create Task{% endif %}
+      </h2>
+      <a
+        href="{% url 'task_list' %}"
+        class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+      >
+        Back to Tasks
+        <svg
+          class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 14 10"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M1 5h12m0 0L9 1m4 4L9 9"
+          />
+        </svg>
+      </a>
+    </div>
+    <form method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <div class="flex w-full justify-end items-center mt-6">
+        <button
+        class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+          type="submit"
+        >
+        Save Task
+      </button>
+      </div>
+    </form>
+  </div>
+</div>
 {% endblock %}

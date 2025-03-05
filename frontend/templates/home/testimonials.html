@@ -1,0 +1,146 @@
+{% load static %}
+<section id="testimonials" class="bg-white dark:bg-gray-900">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+    <div class="mx-auto max-w-screen-sm">
+      <h2
+        class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+      >
+        Testimonials
+      </h2>
+      <p
+        class="mb-8 font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400"
+      >
+        Explore the whole collection of open-source web components and elements
+        built with the utility classes from Tailwind
+      </p>
+    </div>
+    <div class="font-sans p-4 md:flex md:gap-2 md:justify-center">
+      <ul class="flex md:flex-col">
+        <li
+          id="homeTab"
+          class="tab text-primary-600 font-bold text-[15px] py-2.5 px-5 border-b-2 border-primary-600 cursor-pointer"
+        >
+          <figcaption class="flex items-center gap-3 mt-6 md:mt-12">
+            <img
+              class="flex-shrink-0 w-12 h-12 border rounded-full max-md:hidden border-black/10"
+              src="https://loremflickr.com/g/200/200/girl"
+              alt="Sebastiaan Kloos"
+              loading="lazy"
+            />
+            <span class="flex flex-col font-bold tracking-tight items-end">
+              <p>Jane Doe</p>
+            </span>
+          </figcaption>
+        </li>
+        <li
+          id="settingTab"
+          class="tab text-gray-600 font-semibold text-[15px] py-2.5 px-5 border-b-2 border-transparent cursor-pointer"
+        >
+          <figcaption class="flex items-center gap-3 mt-6 md:mt-12">
+            <img
+              class="flex-shrink-0 w-12 h-12 border rounded-full max-md:hidden border-black/10"
+              src="https://loremflickr.com/g/200/200/girl"
+              alt="Sebastiaan Kloos"
+              loading="lazy"
+            />
+            <span class="flex flex-col font-bold tracking-tight items-end">
+              <p>Jane Doe</p>
+            </span>
+          </figcaption>
+        </li>
+        <li
+          id="profileTab"
+          class="tab text-gray-600 font-semibold text-[15px] py-2.5 px-5 border-b-2 border-transparent cursor-pointer"
+        >
+          <figcaption class="flex items-center gap-3 mt-6 md:mt-12">
+            <img
+              class="flex-shrink-0 w-12 h-12 border rounded-full max-md:hidden border-black/10"
+              src="https://loremflickr.com/g/200/200/girl"
+              alt="Sebastiaan Kloos"
+              loading="lazy"
+            />
+            <span class="flex flex-col font-bold tracking-tight items-end">
+              <p>Jane Doe</p>
+            </span>
+          </figcaption>
+        </li>
+      </ul>
+
+      <div
+        id="homeContent"
+        class="tab-content max-w-2xl flex flex-col mt-8 items-center justify-center"
+      >
+        <h4 class="text-lg font-bold text-gray-600">
+          <svg
+            class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600"
+            viewBox="0 0 24 27"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
+              fill="currentColor"
+            />
+          </svg>
+        </h4>
+        <blockquote>
+          <p class="text-sm text-gray-600 mt-4">
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor
+            auctor arcu, at fermentum dui. Maecenas vestibulum a turpis in
+            lacinia. Proin aliquam turpis at erat venenatis malesuada."
+          </p>
+        </blockquote>
+      </div>
+      <div
+        id="settingContent"
+        class="tab-content max-w-2xl flex flex-col mt-8 items-center justify-center hidden"
+      >
+        <h4 class="text-lg font-bold text-gray-600">
+          <svg
+            class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600"
+            viewBox="0 0 24 27"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
+              fill="currentColor"
+            />
+          </svg>
+        </h4>
+        <blockquote>
+          <p class="text-sm text-gray-600 mt-4">
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor
+            auctor arcu, at fermentum dui. Maecenas vestibulum a turpis in
+            lacinia. Proin aliquam turpis at erat venenatis malesuada."
+          </p>
+        </blockquote>
+      </div>
+      <div
+        id="profileContent"
+        class="tab-content max-w-2xl flex flex-col mt-8 items-center justify-center hidden"
+      >
+        <h4 class="text-lg font-bold text-gray-600">
+          <svg
+            class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600"
+            viewBox="0 0 24 27"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
+              fill="currentColor"
+            />
+          </svg>
+        </h4>
+        <blockquote>
+          <p class="text-sm text-gray-600 mt-4">
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor
+            auctor arcu, at fermentum dui. Maecenas vestibulum a turpis in
+            lacinia. Proin aliquam turpis at erat venenatis malesuada."
+          </p>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>

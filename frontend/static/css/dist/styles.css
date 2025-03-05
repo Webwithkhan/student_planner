@@ -2072,10 +2072,6 @@ input:checked + .toggle-bg {
   height: 100vh;
 }
 
-.\!h-6 {
-  height: 1.5rem !important;
-}
-
 .max-h-full {
   max-height: 100%;
 }
@@ -2106,10 +2102,6 @@ input:checked + .toggle-bg {
 
 .w-4 {
   width: 1rem;
-}
-
-.w-40 {
-  width: 10rem;
 }
 
 .w-5 {
@@ -3545,10 +3537,6 @@ input:checked + .toggle-bg {
 
   .max-lg\:border-b {
     border-bottom-width: 1px;
-  }
-
-  .max-lg\:bg-transparent {
-    background-color: transparent;
   }
 
   .max-lg\:bg-white {

@@ -1,17 +1,16 @@
 from pathlib import Path
-import environ
 import os
-
-env = environ.Env()
-environ.Env.read_env(os.path.join(os.path.dirname(__file__), '../.env'))
+from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+load_dotenv(os.path.join(BASE_DIR, '.env'))
 
-SECRET_KEY = env("SECRET_KEY", default='django-insecure-!$vv@!oe=y+kpzzdxx58p-bw(k*=6=x64#ktz(sdooi)w6&wje')
-DEBUG = env.bool("DEBUG", default=True)
 
-ALLOWED_HOSTS = ['student-planner.onrender.com', '127.0.0.1']
+SECRET_KEY = os.getenv("SECRET_KEY", 'django-insecure-!$vv@!oe=y+kpzzdxx58p-bw(k*=6=x64#ktz(sdooi)w6&wje')
+DEBUG = os.getenv('DJANGO_DEBUG', 'True')
+
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", 'student-planner.onrender.com').split(',')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -70,7 +69,10 @@ TEMPLATES = [
 WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
-    'default': env.db("DATABASE_URL", default="sqlite:///development_student_planner.sqlite3")
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 AUTH_PASSWORD_VALIDATORS = [

@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env("SECRET_KEY", default='django-insecure-!$vv@!oe=y+kpzzdxx58p-bw(k*=6=x64#ktz(sdooi)w6&wje')
 DEBUG = env.bool("DEBUG", default=True)
 
-ALLOWED_HOSTS = env("ALLOWED_HOSTS", default='student-planner.onrender.com,127.0.0.1,localhost').spit(",")
+ALLOWED_HOSTS = env("ALLOWED_HOSTS").spit(",")
 
 INSTALLED_APPS = [
     'django.contrib.admin',

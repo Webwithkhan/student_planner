@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env("SECRET_KEY", default='django-insecure-!$vv@!oe=y+kpzzdxx58p-bw(k*=6=x64#ktz(sdooi)w6&wje')
 DEBUG = env.bool("DEBUG", default=True)
 
-ALLOWED_HOSTS = ['student-planner.onrender.com']
+ALLOWED_HOSTS = ['student-planner.onrender.com', '127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -43,6 +43,11 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'config.urls'
 TAILWIND_APP_NAME = 'frontend'
 AUTH_USER_MODEL = "accounts.CustomUser"
+SITE_ID = 1
+LOGIN_URL = "/accounts/login/"
+LOGIN_REDIRECT_URL = "/tasks/"
+ACCOUNT_LOGOUT_REDIRECT_URL = "/"
+ACCOUNT_LOGOUT_ON_GET = True
 
 TEMPLATES = [
     {

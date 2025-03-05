@@ -30,7 +30,7 @@ class UserUpdateForm(UserChangeForm):
                 "placeholder": "University Name"
             }),
             "bio": forms.Textarea(attrs={
-                "class": "block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-600 focus:border-primary-600 dark:bg-gray-700 dark:border-gray-600 dark:text-white",
+                "class": "block p-2.5 min-w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-600 focus:border-primary-600 dark:bg-gray-700 dark:border-gray-600 dark:text-white",
                 "rows": 3,
                 "placeholder": "Write a short bio..."
             }),

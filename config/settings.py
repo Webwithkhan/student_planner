@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env("SECRET_KEY", default='django-insecure-!$vv@!oe=y+kpzzdxx58p-bw(k*=6=x64#ktz(sdooi)w6&wje')
 DEBUG = env.bool("DEBUG", default=True)
 
-ALLOWED_HOSTS = env("ALLOWED_HOSTS").spit(",")
+ALLOWED_HOSTS = env("ALLOWED_HOSTS", default='student-planner.onrender.com')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -22,7 +22,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tailwind',
     'frontend',
-    'django_browser_reload', # development only
+    # 'django_browser_reload', # development only
     'accounts',
     'planner',
     'home',
@@ -36,7 +36,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "django_browser_reload.middleware.BrowserReloadMiddleware", # development only
+    # "django_browser_reload.middleware.BrowserReloadMiddleware", # development only
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'

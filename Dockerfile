@@ -30,8 +30,7 @@ COPY . .
 
 VOLUME /app/media
 
-RUN python manage.py makemigrations
-RUN python manage.py migrate
+RUN python manage.py makemigrations accounts notes planner reminders && python manage.py migrate
 
 RUN python manage.py create_admin
 

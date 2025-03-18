@@ -8,7 +8,7 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         User = get_user_model()
 
-        admin_email = os.getenv("ADMIN_EMAIL", "admin@peakplanner.com")
+        admin_email = os.getenv("ADMIN_EMAIL", "admin@studentplanner.com")
         admin_username = os.getenv("ADMIN_USERNAME", "admin")
         admin_password = os.getenv("ADMIN_PASSWORD", "admin123")
 

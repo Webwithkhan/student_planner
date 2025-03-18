@@ -69,10 +69,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-DB = os.getenv("DATABASE_URL", f"sqlite:///{BASE_DIR / 'development_student_planner.sqlite3'}")
-
 DATABASES = {
-    "default": dj_database_url.config(default=DB, conn_max_age=600)
+    "default": dj_database_url.config(default=os.getenv("DATABASE_URL"), conn_max_age=600)
 }
 
 AUTH_PASSWORD_VALIDATORS = [

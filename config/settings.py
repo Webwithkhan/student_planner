@@ -1,6 +1,7 @@
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -8,7 +9,7 @@ load_dotenv(os.path.join(BASE_DIR, '.env'))
 
 
 SECRET_KEY = os.getenv("SECRET_KEY", 'django-insecure-!$vv@!oe=y+kpzzdxx58p-bw(k*=6=x64#ktz(sdooi)w6&wje')
-DEBUG = os.getenv('DJANGO_DEBUG', 'True')
+DEBUG = os.getenv('DJANGO_DEBUG', 'True') == "True"
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", 'student-planner.onrender.com').split(',')
 
@@ -68,11 +69,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
+DB = os.getenv("DATABASE_URL", f"sqlite:///{BASE_DIR / 'development_student_planner.sqlite3'}")
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    "default": dj_database_url.config(default=DB, conn_max_age=600)
 }
 
 AUTH_PASSWORD_VALIDATORS = [

@@ -30,8 +30,12 @@ COPY . .
 
 VOLUME /app/media
 
-RUN python manage.py flush --noinput
-RUN python manage.py makemigrations accounts notes planner reminders && python manage.py migrate
+RUN find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
+RUN python manage.py makemigrations
+RUN python manage.py migrate  # Migrate after makemigrations
+
+# Optional: If flushing DB is needed
+# RUN python manage.py flush --noinput
 
 RUN python manage.py create_admin
 
